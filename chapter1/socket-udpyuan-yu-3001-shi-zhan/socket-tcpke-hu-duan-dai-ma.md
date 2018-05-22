@@ -1,6 +1,11 @@
 # Socket TCP客户端代码
 ---
-
+客户端
+- 通过connect()调用、连接服务器，
+- 连接成功后
+  - 接收从服务器发来的数据，
+  - 然后关闭连接、退出程序。
+---
 
 ```
 # -*- coding:utf-8 -*-
@@ -17,5 +22,12 @@ print("Connect %s:%d OK" % (HOST,PORT))
 data = sc.recv(1024)
 print("Received： ", data.decode())
 sc.close()
+```
+---
+
+
+```
+Connect 127.0.0.1:3434 OK
+Received：  Current time is 2018-05-22 12:08:56.872428
 ```
 
