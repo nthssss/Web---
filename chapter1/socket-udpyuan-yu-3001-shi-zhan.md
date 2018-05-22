@@ -62,5 +62,25 @@ sc.close()
 
 ```
 ---
+UDP的Python服务端运行结果如下：
+**客户端端口52824由客户端程序在调用sendto()时自动生成。**
+
+```
+Receiced： b'Hello UDP!' from ('127.0.0.1', 52824)
+```
+
+
+
+
+UDP的Python客户端运行结果如下：
+
+
+```
+Sent: Hello UDP! to 127.0.0.1:3434
+```
+
+
+
+
 
 

@@ -25,7 +25,7 @@ sc.close()
 ```
 ---
 
-TCP的Python客户端代码如下：
+TCP的Python客户端运行结果如下：
 ```
 Connect 127.0.0.1:3434 OK
 Received：  Current time is 2018-05-22 12:08:56.872428
