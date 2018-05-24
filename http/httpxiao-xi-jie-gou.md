@@ -51,7 +51,7 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 |Cahe-Control|对服务器的缓存控制|no-cahe：不要从缓存中去取，要求现在从Web服务器中去取|
 |Connection|对服务器的连接控制|Close:告诉web服务器在完成本次请求的响应后，断开连接，不要等待本次连接的后续请求了</br>keep-alive：告诉Web服务器在完成本次请求的响应后，保持连接，等待本次连接的后续请求。|
 |Host|客户端指定自己想访问的Web服务器的域名、IP地址和端口号。|IP:port|
-|Proxy-Authenticate|提供自己在代理服务器中的身份信息|Username:Password|
+|Proxy-Authenticate|提供自己在代理服务器中的身份信息|username:Password|
 |range|需要获取对象的哪一部分内容|bytes=1024-  ：获取从第1024个字节到最后的内容|
 |Referer|浏览器向Web服务器表明自己是从哪个URL获得当前请求中的URL的|http://www.baidu.com|
 |User-Agent|指明浏览器的软件类型及版本|Mozila/x.x：Windows浏览器</br>Firefox/xx.x.x：Firefix浏览器|
@@ -60,8 +60,9 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 |字段名|解释|可能的值|
 |-|-|-|
 |Age|实体从产生到现在经过了多长时间|-|
-|Authorization|当||
-|Connection|||
+|Authorization|当客户端接收到来自Web服务器的WWW-Authenticate响应时，</br>该头部回应自己的身份验证消息给Web服务器|username:password|
+|Cahe-Control|对客户端的缓存控制|Public：可以用缓存内容回应任何用户。</br>Private：只能用缓存内容回应先前请求该内容的那个用户。|
+|Connection|对服务器的连接控制||
 |Expired|||
 |Location|||
 |Proxy-Authenticate|||
