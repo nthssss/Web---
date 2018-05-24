@@ -10,6 +10,7 @@
   * [TCP和UDP](tcpudpwang-luo/tcphe-udp.md)
     * [C/S及B/S架构](tcpudpwang-luo/tcphe-udp/csji-b-s-jia-gou.md)
     * [三次握手四次挥手](tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou.md)
+      * [TCP中Socket的11种状态变迁](tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou/tcpzhong-socket-de-11-zhong-zhuang-tai-bian-qian.md)
 * [HTTP](http.md)
   * [HTTP流程](http/httpliu-cheng.md)
   * [HTTP消息结构](http/httpxiao-xi-jie-gou.md)
