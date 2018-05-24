@@ -44,11 +44,11 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 |字段名|解释|可能的值|
 |-|-|-|
 ||||
-|Accept|接受什么介质类型|type/sub-type</br>`*/*`表示任何类型</br>*/type表示该类型下的所有子类型|
-|Accept-Charset|||
-|Accept-Encoding|||
-|Accpet-Language|||
-|Accpet-Ranges|||
+|Accept|接受什么介质类型|type/sub-type</br>`*/*`表示任何类型</br>`*/type`表示该类型下的所有子类型|
+|Accept-Charset|接收的字符集|ISO-8859-1|
+|Accept-Encoding|接收的编码方法，通常指定</br>压缩方法、</br>是否支持压缩、</br>支持什么压缩方法。</br>|Gzip、deflate、UTF8|
+|Accpet-Language|接收的语言|En、cn|
+|Accpet-Ranges|服务器表明自己是否接受获取其某个实体的一部分（比如文件的一部分）的请求|bytes：表示接受</br>none：表示不接受。|
 |Cahe-Control|||
 |Connection|||
 |Host|||
