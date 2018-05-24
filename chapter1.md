@@ -1,7 +1,7 @@
 # Socket编程
 ---
 **本章只涉及Socket的TCP和UDP编程**
-- Socket基础
+- Socket概念及作用
 - TCP的Socket原语及其Python编程
 - UDP的Socket原语及其Python编程
 ---
