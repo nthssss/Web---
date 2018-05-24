@@ -38,7 +38,7 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 |字段名|解释|可能的值|
 |-|-|-|
 |Etag|内容唯一标识。</br>客户端需要把服务器传来的Etag保留，在下次请求相同的URL时提交给服务器。</br>服务器用Etag值判断同一个URL的内容是否有变化，如有变化则发送更新的内容给客户端。|任何值|
-|Via|列出从客户端到服务器或者相反方向的响应：</br>经过了哪些代理服务器；</br>用什么协议（和版本）发送请求。||
+|Via|列出从客户端到服务器或者相反方向的响应：</br>经过了哪些代理服务器；</br>用什么协议（和版本）发送请求。|-|
 
 ### Request：
 |字段名|解释|可能的值|
@@ -53,11 +53,30 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 |Host|客户端指定自己想访问的Web服务器的域名、IP地址和端口号。|IP:port|
 |Proxy-Authenticate|提供自己在代理服务器中的身份信息|Username:Password|
 |range|需要获取对象的哪一部分内容|bytes=1024-  ：获取从第1024个字节到最后的内容|
-|Referer|||
-|User-Agent|||
+|Referer|浏览器向Web服务器表明自己是从哪个URL获得当前请求中的URL的|http://www.baidu.com|
+|User-Agent|指明浏览器的软件类型及版本|Mozila/x.x：Windows浏览器</br>Firefox/xx.x.x：Firefix浏览器|
 
 ## Reposne
 |字段名|解释|可能的值|
 |-|-|-|
-||||
+|Age|实体从产生到现在经过了多长时间|-|
+|Authorization|当||
+|Connection|||
+|Expired|||
+|Location|||
+|Proxy-Authenticate|||
+|Server|||
+
+
+
+
+
+
+
+
+
+
+
+
+
 
