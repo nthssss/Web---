@@ -3,6 +3,8 @@
 Web服务器仅起到桥梁的作用：
 - 将浏览器的HTTP请求解码，转换成服务器端程序能够识别的接口调用方式；
 - 将服务器端程序生成的返回封装成HTTP Response，返回给浏览器。
+![](/assets/S-A-B.png)
+
 ##Web服务器简介：
 handles(解析)HTTP
 
@@ -10,7 +12,7 @@ handles(解析)HTTP
 - 根据配置的内容：
     - 返回一个静态的HTML页面；
     - 或者调用某些代码动态生成返回结果。
-
+    
 Web服务器把dynamic reponse(动态响应)的产生delegate（委托）给其他一些程序。
 例如：
 - **Python代码**；
