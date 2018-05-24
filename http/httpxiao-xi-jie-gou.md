@@ -56,19 +56,38 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 |Referer|浏览器向Web服务器表明自己是从哪个URL获得当前请求中的URL的|http://www.baidu.com|
 |User-Agent|指明浏览器的软件类型及版本|Mozila/x.x：Windows浏览器</br>Firefox/xx.x.x：Firefix浏览器|
 
-## Reposne
+### Reposne
 |字段名|解释|可能的值|
 |-|-|-|
 |Age|实体从产生到现在经过了多长时间|-|
 |Authorization|当客户端接收到来自Web服务器的WWW-Authenticate响应时，</br>该头部回应自己的身份验证消息给Web服务器|username:password|
 |Cahe-Control|对客户端的缓存控制|Public：可以用缓存内容回应任何用户。</br>Private：只能用缓存内容回应先前请求该内容的那个用户。|
-|Connection|对服务器的连接控制||
-|Expired|||
-|Location|||
-|Proxy-Authenticate|||
-|Server|||
+|Connection|连接状态通知|Close：连接已经关闭；</br>keep-alive：连接保持，等待本次连接的后续请求。|
+|Expired|Web服务器表明该实体将在什么时候过期|YYYY-MM-DD HH:MM:SS|
+|Location|访问的对象已经被移到别的位置了，应该到本字段指向的地址获取|http://mysite.com/another_url|
+|Proxy-Authenticate|代理服务器响应浏览器，要求其提供代理身份验证信息。|-|
+|Server|指明浏览器的软件类型及版本|Nginx/1.14|
 
+##常用HTTP状态码
+- 每个Response第一行有一个整数状态码用于表达其对应Request的结果；
+- HTTP除了约定该状态的表达方式，还约定了该状态的取值范围；
+- 约定的5种类型的状态码：
+    - 1xx：信息：表名服务器已经收到Request，但需要进一步处理，请客户端等待。
+    - 2xx：成功：处理成功。
+    - 3xx：重定向：请求的地址已被重定向，需要客户端重新发起请求。
+    - 4xx:客户端错误：请求中提交的参数或内容有错误。
+    - 5xx：服务器错误：服务器处理请求时出错。
+    - 1xx~5xx错误为HTTP标准错误，在网站开发中定义自己的错误代码时需要避开该范围。
 
+常见HTTP状态码：
+- 100：继续等待
+- 200：正常完成并返回；
+- 204：无内容；
+- 206：部分内容被返回；
+- 301：已移动；
+- 304：未修改；
+- 305：必须使用代理；
+- 
 
 
 
