@@ -10,6 +10,10 @@
   * [TCP和UDP](tcpudpwang-luo/tcphe-udp.md)
     * [C/S及B/S架构](tcpudpwang-luo/tcphe-udp/csji-b-s-jia-gou.md)
 * [HTTP](http.md)
+  * [HTTP流程](http/httpliu-cheng.md)
+  * [HTTP消息结构](http/httpxiao-xi-jie-gou.md)
+  * [HTTP请求方法](http/httpqing-qiu-fang-fa.md)
+  * 基于HTTP的网站开发
 * [Socket编程](chapter1.md)
   * [Socket的概念及作用](chapter1/socketde-gai-nian-ji-zuo-yong.md)
   * [Socket TCP原语、实战](chapter1/socket-tcpyuan-yu-3001-shi-zhan.md)
