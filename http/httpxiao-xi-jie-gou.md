@@ -43,17 +43,16 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 ### Request：
 |字段名|解释|可能的值|
 |-|-|-|
-||||
 |Accept|接受什么介质类型|type/sub-type</br>`*/*`表示任何类型</br>`*/type`表示该类型下的所有子类型|
 |Accept-Charset|接收的字符集|ISO-8859-1|
 |Accept-Encoding|接收的编码方法，通常指定</br>压缩方法、</br>是否支持压缩、</br>支持什么压缩方法。</br>|Gzip、deflate、UTF8|
 |Accpet-Language|接收的语言|En、cn|
 |Accpet-Ranges|服务器表明自己是否接受获取其某个实体的一部分（比如文件的一部分）的请求|bytes：表示接受</br>none：表示不接受。|
-|Cahe-Control|||
-|Connection|||
-|Host|||
-|Proxy-Authenticate|||
-|range|||
+|Cahe-Control|对服务器的缓存控制|no-cahe：不要从缓存中去取，要求现在从Web服务器中去取|
+|Connection|对服务器的连接控制|Close:告诉web服务器在完成本次请求的响应后，断开连接，不要等待本次连接的后续请求了</br>keep-alive：告诉Web服务器在完成本次请求的响应后，保持连接，等待本次连接的后续请求。|
+|Host|客户端指定自己想访问的Web服务器的域名、IP地址和端口号。|IP:port|
+|Proxy-Authenticate|提供自己在代理服务器中的身份信息|Username:Password|
+|range|需要获取对象的哪一部分内容|bytes=1024-  ：获取从第1024个字节到最后的内容|
 |Referer|||
 |User-Agent|||
 
