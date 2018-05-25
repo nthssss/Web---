@@ -1,0 +1,767 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>HTTP消息结构 | Web编程-网络基础</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../http/httpqing-qiu-fang-fa.html" />
+    
+    
+    <link rel="prev" href="../http/httpliu-cheng.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="HTTP消息结构"
+        data-filepath="http/httpxiao-xi-jie-gou.md"
+        data-basepath=".."
+        data-revision="Fri May 25 2018 15:19:04 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="tcpudpwang-luo.html">
+            
+                
+                    <a href="../tcpudpwang-luo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        TCP/IP网络
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu.html">
+            
+                
+                    <a href="../tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        计算机网络综述
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/wang-luo-fen-ceng.html">
+            
+                
+                    <a href="../tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/wang-luo-fen-ceng.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        网络分层
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/ipdi-zhi.html">
+            
+                
+                    <a href="../tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/ipdi-zhi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        IP地址
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/yu-ming.html">
+            
+                
+                    <a href="../tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/yu-ming.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                        域名
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/url.html">
+            
+                
+                    <a href="../tcpudpwang-luo/ji-suan-ji-wang-luo-zong-shu/url.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.4.</b>
+                        
+                        URL
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="tcpudpwang-luo/tcphe-udp.html">
+            
+                
+                    <a href="../tcpudpwang-luo/tcphe-udp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        TCP和UDP
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="tcpudpwang-luo/tcphe-udp/csji-b-s-jia-gou.html">
+            
+                
+                    <a href="../tcpudpwang-luo/tcphe-udp/csji-b-s-jia-gou.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        C/S及B/S架构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou.html">
+            
+                
+                    <a href="../tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        三次握手四次挥手
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou/tcpzhong-socket-de-11-zhong-zhuang-tai-bian-qian.html">
+            
+                
+                    <a href="../tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou/tcpzhong-socket-de-11-zhong-zhuang-tai-bian-qian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.1.</b>
+                        
+                        TCP中Socket的11种状态变迁
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou/san-ci-wo-shou-3001-si-ci-hui-shou.html">
+            
+                
+                    <a href="../tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou/san-ci-wo-shou-3001-si-ci-hui-shou.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.2.</b>
+                        
+                        三次握手、四次挥手
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou/tong-shi-da-kai-3001-tong-shi-guan-bi.html">
+            
+                
+                    <a href="../tcpudpwang-luo/tcphe-udp/san-ci-wo-shou-si-ci-hui-shou/tong-shi-da-kai-3001-tong-shi-guan-bi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.3.</b>
+                        
+                        同时打开、同时关闭
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="http.html">
+            
+                
+                    <a href="../http.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        HTTP
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="http/httpliu-cheng.html">
+            
+                
+                    <a href="../http/httpliu-cheng.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        HTTP流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="http/httpxiao-xi-jie-gou.html">
+            
+                
+                    <a href="../http/httpxiao-xi-jie-gou.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        HTTP消息结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="http/httpqing-qiu-fang-fa.html">
+            
+                
+                    <a href="../http/httpqing-qiu-fang-fa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        HTTP请求方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="http/ji-yu-http-de-wang-zhan-kai-fa.html">
+            
+                
+                    <a href="../http/ji-yu-http-de-wang-zhan-kai-fa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        基于HTTP的网站开发
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter1.html">
+            
+                
+                    <a href="../chapter1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Socket编程
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter1/socketde-gai-nian-ji-zuo-yong.html">
+            
+                
+                    <a href="../chapter1/socketde-gai-nian-ji-zuo-yong.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Socket的概念及作用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter1/socket-tcpyuan-yu-3001-shi-zhan.html">
+            
+                
+                    <a href="../chapter1/socket-tcpyuan-yu-3001-shi-zhan.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Socket TCP原语、实战
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="chapter1/socket-udpyuan-yu-3001-shi-zhan/socket-tcpyuan-yu.html">
+            
+                
+                    <a href="../chapter1/socket-udpyuan-yu-3001-shi-zhan/socket-tcpyuan-yu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                        Socket TCP服务端代码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="chapter1/socket-udpyuan-yu-3001-shi-zhan/socket-tcpke-hu-duan-dai-ma.html">
+            
+                
+                    <a href="../chapter1/socket-udpyuan-yu-3001-shi-zhan/socket-tcpke-hu-duan-dai-ma.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.2.</b>
+                        
+                        Socket TCP客户端代码
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter1/socket-udpyuan-yu-3001-shi-zhan.html">
+            
+                
+                    <a href="../chapter1/socket-udpyuan-yu-3001-shi-zhan.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Socket UDP原语、实战
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Web编程-网络基础</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="http&#x6D88;&#x606F;&#x7ED3;&#x6784;">HTTP&#x6D88;&#x606F;&#x7ED3;&#x6784;</h1>
+<hr>
+<table>
+        <tr>
+            <th>Request&#x6D88;&#x606F;&#x7ED3;&#x6784;</th>
+            <td>
+                <div>&#x3010;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x3011; &#x3010;URL&#x3011;&#x3010;&#x534F;&#x8BAE;&#x7248;&#x672C;&#x3011;</div>
+                <div>&#x3010;&#x5934;&#x5B57;&#x6BB5;1&#x3011;&#xFF1A;&#x503C;1</div>
+                <div>&#x2026;</div>
+                <div>&#x3010;&#x5934;&#x5B57;&#x6BB5;n&#x3011;&#xFF1A;&#x503C;n</div>
+                <div>&#x3010;&#x7A7A;&#x884C;&#x3011;</div>
+                <div>&#x3010;&#x8BF7;&#x6C42;&#x4F53;&#x3011;</div>    
+            </td>
+        </tr>
+        <tr>
+            <th>Response&#x6D88;&#x606F;&#x7ED3;&#x6784;</th>
+            <td>
+                <div>&#x3010;&#x534F;&#x8BAE;&#x7248;&#x672C;&#x3011; &#x3010;&#x9519;&#x8BEF;&#x7801;&#x3011;&#x3010;&#x9519;&#x8BEF;&#x5B57;&#x7B26;&#x4E32;&#x3011;</div>
+                <div>&#x3010;&#x5934;&#x5B57;&#x6BB5;1&#x3011;:&#x503C;1</div>
+                <div>&#x2026;</div>
+                <div>&#x3010;&#x5934;&#x5B57;&#x6BB5;N&#x3011;:&#x503C;N</div>
+                <div>&#x3010;&#x7A7A;&#x884C;&#x3011;</div>
+                <div>&#x3010;&#x54CD;&#x5E94;&#x4F53;&#x3011;</div>  
+            </td>
+        </tr>
+    </table>
+
+<hr>
+<h2 id="&#x5E38;&#x7528;&#x5934;&#x5B57;&#x6BB5;&#xFF1A;">&#x5E38;&#x7528;&#x5934;&#x5B57;&#x6BB5;&#xFF1A;</h2>
+<p>HTTP&#x4E2D;&#x5934;&#x5B57;&#x6BB5;&#x4EE5;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x65B9;&#x5F0F;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x6216;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x5BF9;&#x65B9;&#x7684;&#x4FE1;&#x606F;&#x3002;
+&#x672C;&#x6587;&#x4E2D;&#x7684;&#x65B9;&#x5411;&#x6307;&#xFF1A;</p>
+<ul>
+<li>Request&#x65B9;&#x5411;&#xFF1A;&#x8BF7;&#x6C42;&#x5934;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x7AEF;&#xFF1B;</li>
+<li>Reponse&#x65B9;&#x5411;&#xFF1A;&#x54CD;&#x5E94;&#x5934;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF1B;</li>
+<li>Both&#x65B9;&#x5411;&#xFF1A;&#x4E24;&#x4E2A;&#x65B9;&#x5411;&#x7686;&#x53EF;&#x3002;</li>
+</ul>
+<p><strong>HTTP&#x6D88;&#x606F;&#x7ED3;&#x6784;&#x4E2D;&#x6CA1;&#x6709;Both&#x8FD9;&#x4E00;&#x8BF4;&#xFF0C;Both&#x4EC5;&#x5728;&#x672C;&#x6587;&#x4E2D;&#x6307;&#x4E24;&#x4E2A;&#x65B9;&#x5411;&#x7686;&#x53EF;&#x3002;</strong></p>
+<h3 id="both&#xFF1A;">Both&#xFF1A;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+<th>&#x53EF;&#x80FD;&#x7684;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Etag</td>
+<td>&#x5185;&#x5BB9;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x3002;<br>&#x5BA2;&#x6237;&#x7AEF;&#x9700;&#x8981;&#x628A;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x6765;&#x7684;Etag&#x4FDD;&#x7559;&#xFF0C;&#x5728;&#x4E0B;&#x6B21;&#x8BF7;&#x6C42;&#x76F8;&#x540C;&#x7684;URL&#x65F6;&#x63D0;&#x4EA4;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x3002;<br>&#x670D;&#x52A1;&#x5668;&#x7528;Etag&#x503C;&#x5224;&#x65AD;&#x540C;&#x4E00;&#x4E2A;URL&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x6709;&#x53D8;&#x5316;&#xFF0C;&#x5982;&#x6709;&#x53D8;&#x5316;&#x5219;&#x53D1;&#x9001;&#x66F4;&#x65B0;&#x7684;&#x5185;&#x5BB9;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</td>
+<td>&#x4EFB;&#x4F55;&#x503C;</td>
+</tr>
+<tr>
+<td>Via</td>
+<td>&#x5217;&#x51FA;&#x4ECE;&#x5BA2;&#x6237;&#x7AEF;&#x5230;&#x670D;&#x52A1;&#x5668;&#x6216;&#x8005;&#x76F8;&#x53CD;&#x65B9;&#x5411;&#x7684;&#x54CD;&#x5E94;&#xFF1A;<br>&#x7ECF;&#x8FC7;&#x4E86;&#x54EA;&#x4E9B;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#xFF1B;<br>&#x7528;&#x4EC0;&#x4E48;&#x534F;&#x8BAE;&#xFF08;&#x548C;&#x7248;&#x672C;&#xFF09;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x3002;</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request&#xFF1A;">Request&#xFF1A;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+<th>&#x53EF;&#x80FD;&#x7684;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept</td>
+<td>&#x63A5;&#x53D7;&#x4EC0;&#x4E48;&#x4ECB;&#x8D28;&#x7C7B;&#x578B;</td>
+<td>type/sub-type<br><code>*/*</code>&#x8868;&#x793A;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;<br><code>*/type</code>&#x8868;&#x793A;&#x8BE5;&#x7C7B;&#x578B;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x5B50;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>&#x63A5;&#x6536;&#x7684;&#x5B57;&#x7B26;&#x96C6;</td>
+<td>ISO-8859-1</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>&#x63A5;&#x6536;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x6307;&#x5B9A;<br>&#x538B;&#x7F29;&#x65B9;&#x6CD5;&#x3001;<br>&#x662F;&#x5426;&#x652F;&#x6301;&#x538B;&#x7F29;&#x3001;&lt;/br&gt;&#x652F;&#x6301;&#x4EC0;&#x4E48;&#x538B;&#x7F29;&#x65B9;&#x6CD5;&#x3002;<br></td>
+<td>Gzip&#x3001;deflate&#x3001;UTF8</td>
+</tr>
+<tr>
+<td>Accpet-Language</td>
+<td>&#x63A5;&#x6536;&#x7684;&#x8BED;&#x8A00;</td>
+<td>En&#x3001;cn</td>
+</tr>
+<tr>
+<td>Accpet-Ranges</td>
+<td>&#x670D;&#x52A1;&#x5668;&#x8868;&#x660E;&#x81EA;&#x5DF1;&#x662F;&#x5426;&#x63A5;&#x53D7;&#x83B7;&#x53D6;&#x5176;&#x67D0;&#x4E2A;&#x5B9E;&#x4F53;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF08;&#x6BD4;&#x5982;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#x7684;&#x8BF7;&#x6C42;</td>
+<td>bytes&#xFF1A;&#x8868;&#x793A;&#x63A5;&#x53D7;<br>none&#xFF1A;&#x8868;&#x793A;&#x4E0D;&#x63A5;&#x53D7;&#x3002;</td>
+</tr>
+<tr>
+<td>Cahe-Control</td>
+<td>&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x63A7;&#x5236;</td>
+<td>no-cahe&#xFF1A;&#x4E0D;&#x8981;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x53BB;&#x53D6;&#xFF0C;&#x8981;&#x6C42;&#x73B0;&#x5728;&#x4ECE;Web&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x53BB;&#x53D6;</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x63A7;&#x5236;</td>
+<td>Close:&#x544A;&#x8BC9;web&#x670D;&#x52A1;&#x5668;&#x5728;&#x5B8C;&#x6210;&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x54CD;&#x5E94;&#x540E;&#xFF0C;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#xFF0C;&#x4E0D;&#x8981;&#x7B49;&#x5F85;&#x672C;&#x6B21;&#x8FDE;&#x63A5;&#x7684;&#x540E;&#x7EED;&#x8BF7;&#x6C42;&#x4E86;<br>keep-alive&#xFF1A;&#x544A;&#x8BC9;Web&#x670D;&#x52A1;&#x5668;&#x5728;&#x5B8C;&#x6210;&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x54CD;&#x5E94;&#x540E;&#xFF0C;&#x4FDD;&#x6301;&#x8FDE;&#x63A5;&#xFF0C;&#x7B49;&#x5F85;&#x672C;&#x6B21;&#x8FDE;&#x63A5;&#x7684;&#x540E;&#x7EED;&#x8BF7;&#x6C42;&#x3002;</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>&#x5BA2;&#x6237;&#x7AEF;&#x6307;&#x5B9A;&#x81EA;&#x5DF1;&#x60F3;&#x8BBF;&#x95EE;&#x7684;Web&#x670D;&#x52A1;&#x5668;&#x7684;&#x57DF;&#x540D;&#x3001;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</td>
+<td>IP:port</td>
+</tr>
+<tr>
+<td>Proxy-Authenticate</td>
+<td>&#x63D0;&#x4F9B;&#x81EA;&#x5DF1;&#x5728;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7684;&#x8EAB;&#x4EFD;&#x4FE1;&#x606F;</td>
+<td>username:Password</td>
+</tr>
+<tr>
+<td>range</td>
+<td>&#x9700;&#x8981;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x54EA;&#x4E00;&#x90E8;&#x5206;&#x5185;&#x5BB9;</td>
+<td>bytes=1024-  &#xFF1A;&#x83B7;&#x53D6;&#x4ECE;&#x7B2C;1024&#x4E2A;&#x5B57;&#x8282;&#x5230;&#x6700;&#x540E;&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>Referer</td>
+<td>&#x6D4F;&#x89C8;&#x5668;&#x5411;Web&#x670D;&#x52A1;&#x5668;&#x8868;&#x660E;&#x81EA;&#x5DF1;&#x662F;&#x4ECE;&#x54EA;&#x4E2A;URL&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x4E2D;&#x7684;URL&#x7684;</td>
+<td><a href="http://www.baidu.com" target="_blank">http://www.baidu.com</a></td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>&#x6307;&#x660E;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8F6F;&#x4EF6;&#x7C7B;&#x578B;&#x53CA;&#x7248;&#x672C;</td>
+<td>Mozila/x.x&#xFF1A;Windows&#x6D4F;&#x89C8;&#x5668;<br>Firefox/xx.x.x&#xFF1A;Firefix&#x6D4F;&#x89C8;&#x5668;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reposne">Reposne</h3>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+<th>&#x53EF;&#x80FD;&#x7684;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Age</td>
+<td>&#x5B9E;&#x4F53;&#x4ECE;&#x4EA7;&#x751F;&#x5230;&#x73B0;&#x5728;&#x7ECF;&#x8FC7;&#x4E86;&#x591A;&#x957F;&#x65F6;&#x95F4;</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x6765;&#x81EA;Web&#x670D;&#x52A1;&#x5668;&#x7684;WWW-Authenticate&#x54CD;&#x5E94;&#x65F6;&#xFF0C;<br>&#x8BE5;&#x5934;&#x90E8;&#x56DE;&#x5E94;&#x81EA;&#x5DF1;&#x7684;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x6D88;&#x606F;&#x7ED9;Web&#x670D;&#x52A1;&#x5668;</td>
+<td>username:password</td>
+</tr>
+<tr>
+<td>Cahe-Control</td>
+<td>&#x5BF9;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7F13;&#x5B58;&#x63A7;&#x5236;</td>
+<td>Public&#xFF1A;&#x53EF;&#x4EE5;&#x7528;&#x7F13;&#x5B58;&#x5185;&#x5BB9;&#x56DE;&#x5E94;&#x4EFB;&#x4F55;&#x7528;&#x6237;&#x3002;<br>Private&#xFF1A;&#x53EA;&#x80FD;&#x7528;&#x7F13;&#x5B58;&#x5185;&#x5BB9;&#x56DE;&#x5E94;&#x5148;&#x524D;&#x8BF7;&#x6C42;&#x8BE5;&#x5185;&#x5BB9;&#x7684;&#x90A3;&#x4E2A;&#x7528;&#x6237;&#x3002;</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x901A;&#x77E5;</td>
+<td>Close&#xFF1A;&#x8FDE;&#x63A5;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#xFF1B;<br>keep-alive&#xFF1A;&#x8FDE;&#x63A5;&#x4FDD;&#x6301;&#xFF0C;&#x7B49;&#x5F85;&#x672C;&#x6B21;&#x8FDE;&#x63A5;&#x7684;&#x540E;&#x7EED;&#x8BF7;&#x6C42;&#x3002;</td>
+</tr>
+<tr>
+<td>Expired</td>
+<td>Web&#x670D;&#x52A1;&#x5668;&#x8868;&#x660E;&#x8BE5;&#x5B9E;&#x4F53;&#x5C06;&#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8FC7;&#x671F;</td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>&#x8BBF;&#x95EE;&#x7684;&#x5BF9;&#x8C61;&#x5DF2;&#x7ECF;&#x88AB;&#x79FB;&#x5230;&#x522B;&#x7684;&#x4F4D;&#x7F6E;&#x4E86;&#xFF0C;&#x5E94;&#x8BE5;&#x5230;&#x672C;&#x5B57;&#x6BB5;&#x6307;&#x5411;&#x7684;&#x5730;&#x5740;&#x83B7;&#x53D6;</td>
+<td><a href="http://mysite.com/another_url" target="_blank">http://mysite.com/another_url</a></td>
+</tr>
+<tr>
+<td>Proxy-Authenticate</td>
+<td>&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x8981;&#x6C42;&#x5176;&#x63D0;&#x4F9B;&#x4EE3;&#x7406;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x4FE1;&#x606F;&#x3002;</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>&#x6307;&#x660E;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8F6F;&#x4EF6;&#x7C7B;&#x578B;&#x53CA;&#x7248;&#x672C;</td>
+<td>Nginx/1.14</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x5E38;&#x7528;http&#x72B6;&#x6001;&#x7801;">&#x5E38;&#x7528;HTTP&#x72B6;&#x6001;&#x7801;</h2>
+<ul>
+<li>&#x6BCF;&#x4E2A;Response&#x7B2C;&#x4E00;&#x884C;&#x6709;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x72B6;&#x6001;&#x7801;&#x7528;&#x4E8E;&#x8868;&#x8FBE;&#x5176;&#x5BF9;&#x5E94;Request&#x7684;&#x7ED3;&#x679C;&#xFF1B;</li>
+<li>HTTP&#x9664;&#x4E86;&#x7EA6;&#x5B9A;&#x8BE5;&#x72B6;&#x6001;&#x7684;&#x8868;&#x8FBE;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD8;&#x7EA6;&#x5B9A;&#x4E86;&#x8BE5;&#x72B6;&#x6001;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;&#xFF1B;</li>
+<li>&#x7EA6;&#x5B9A;&#x7684;5&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x72B6;&#x6001;&#x7801;&#xFF1A;<ul>
+<li>1xx&#xFF1A;&#x4FE1;&#x606F;&#xFF1A;&#x8868;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x6536;&#x5230;Request&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x8BF7;&#x5BA2;&#x6237;&#x7AEF;&#x7B49;&#x5F85;&#x3002;</li>
+<li>2xx&#xFF1A;&#x6210;&#x529F;&#xFF1A;&#x5904;&#x7406;&#x6210;&#x529F;&#x3002;</li>
+<li>3xx&#xFF1A;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;&#x5DF2;&#x88AB;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x9700;&#x8981;&#x5BA2;&#x6237;&#x7AEF;&#x91CD;&#x65B0;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x3002;</li>
+<li>4xx:&#x5BA2;&#x6237;&#x7AEF;&#x9519;&#x8BEF;&#xFF1A;&#x8BF7;&#x6C42;&#x4E2D;&#x63D0;&#x4EA4;&#x7684;&#x53C2;&#x6570;&#x6216;&#x5185;&#x5BB9;&#x6709;&#x9519;&#x8BEF;&#x3002;</li>
+<li>5xx&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x65F6;&#x51FA;&#x9519;&#x3002;</li>
+<li>1xx~5xx&#x9519;&#x8BEF;&#x4E3A;HTTP&#x6807;&#x51C6;&#x9519;&#x8BEF;&#xFF0C;&#x5728;&#x7F51;&#x7AD9;&#x5F00;&#x53D1;&#x4E2D;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#x65F6;&#x9700;&#x8981;&#x907F;&#x5F00;&#x8BE5;&#x8303;&#x56F4;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p>&#x5E38;&#x7528;HTTP&#x72B6;&#x6001;&#x7801;&#xFF1A;</p>
+<ul>
+<li>100&#xFF1A;&#x7EE7;&#x7EED;&#x7B49;&#x5F85;</li>
+<li>200&#xFF1A;&#x6B63;&#x5E38;&#x5B8C;&#x6210;&#x5E76;&#x8FD4;&#x56DE;&#xFF1B;</li>
+<li>204&#xFF1A;&#x65E0;&#x5185;&#x5BB9;&#xFF1B;</li>
+<li>206&#xFF1A;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x88AB;&#x8FD4;&#x56DE;&#xFF1B;</li>
+<li>301&#xFF1A;&#x5DF2;&#x79FB;&#x52A8;&#xFF1B;</li>
+<li>304&#xFF1A;&#x672A;&#x4FEE;&#x6539;&#xFF1B;</li>
+<li>305&#xFF1A;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#xFF1B;</li>
+<li>400&#xFF1A;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF1B;</li>
+<li>401&#xFF1A;&#x672A;&#x6388;&#x6743;&#xFF1B;</li>
+<li>402&#xFF1A;&#x9700;&#x8981;&#x4ED8;&#x8D39;&#x8BBF;&#x95EE;&#xFF1B;</li>
+<li>403&#xFF1A;&#x7981;&#x6B62;&#x8BBF;&#x95EE;&#xFF1B;</li>
+<li>500&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x5F02;&#x5E38;&#x9519;&#x8BEF;&#xFF1B;</li>
+<li>501&#xFF1A;&#x672A;&#x6267;&#x884C;&#xFF1B;</li>
+<li>502&#xFF1A;&#x4E0A;&#x6E38;&#x7684;&#x5176;&#x4ED6;&#x6765;&#x6E90;&#x9519;&#x8BEF;&#xFF1B;</li>
+<li>503&#xFF1A;&#x4E34;&#x65F6;&#x8FC7;&#x8F7D;&#x6216;&#x7EF4;&#x62A4;&#x4E2D;&#x3002;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../http/httpliu-cheng.html" class="navigation navigation-prev " aria-label="Previous page: HTTP流程"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../http/httpqing-qiu-fang-fa.html" class="navigation navigation-next " aria-label="Next page: HTTP请求方法"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
