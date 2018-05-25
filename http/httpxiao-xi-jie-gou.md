@@ -60,7 +60,7 @@ HTTP中头字段以键值对的方式为服务器或客户端提供对方的信�
 |字段名|解释|可能的值|
 |-|-|-|
 |Age|实体从产生到现在经过了多长时间|-|
-|Authorization|当客户端接收到来自Web服务器的WWW-Authenticate响应时，</br>该头部回应自己的身份验证消息给Web服务器|username:password|
+|Authorization|当客户端接收到来自Web服务器的WWW-Authenticate响应时，<br>该头部回应自己的身份验证消息给Web服务器|username:password|
 |Cahe-Control|对客户端的缓存控制|Public：可以用缓存内容回应任何用户。</br>Private：只能用缓存内容回应先前请求该内容的那个用户。|
 |Connection|连接状态通知|Close：连接已经关闭；<br>keep-alive：连接保持，等待本次连接的后续请求。|
 |Expired|Web服务器表明该实体将在什么时候过期|YYYY-MM-DD HH:MM:SS|
