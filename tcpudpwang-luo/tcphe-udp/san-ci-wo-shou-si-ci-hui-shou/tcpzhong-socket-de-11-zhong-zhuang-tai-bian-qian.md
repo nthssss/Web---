@@ -1,4 +1,4 @@
-#TCP中Socket的11种状态变迁
+#TCP中Socket的11种状态变迁（了解）
 ---
 ##TCP中Socket的11种状态变迁
 ![](/assets/TCP中Socket状态变迁.png)
