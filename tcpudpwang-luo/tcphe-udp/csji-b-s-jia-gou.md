@@ -7,6 +7,7 @@ C/S(Client/Server)：
   - Client程序的任务是：
     - 将用户的要求提交给Server程序；
     - 再将Server程序返回的结果以特定形式显示给用户。
+    
 B/S（Browser/Server）：
 - Web兴起后的一种网络结构模式。
 - 使用Web浏览器作为客户端的应用软件，所以B/S可以看作C/S的一种特殊情况。
