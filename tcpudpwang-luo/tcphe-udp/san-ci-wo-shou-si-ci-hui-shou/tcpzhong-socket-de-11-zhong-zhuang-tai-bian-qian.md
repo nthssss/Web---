@@ -1,7 +1,8 @@
-#TCP中Socket的11种状态变迁
----
-##TCP中Socket的11种状态变迁（了解）
-![](/assets/TCP中Socket状态变迁.png)
+# TCP中Socket的11种状态变迁
+
+## TCP中Socket的11种状态变迁（了解）
+
+![](../../../.gitbook/assets/tcp-zhong-socket-zhuang-tai-bian-qian.png)
 
 ## 2MSL
 
@@ -18,8 +19,8 @@ MSL
 
 2MSL即**两倍的MSL**，TCP的`TIME_WAIT`状态也称为2MSL等待状态：
 
-- 当TCP的一端发起主动关闭，在发出最后一个ACK包后，即第三次挥手完成后发送了第四次挥手的ACK包前就进入了`TIME_WAIT`状态；
-- 必须在此状态上停留两倍的MSL时间，这样可以让TCP再次发送最后的ACK以防这个ACK丢失（另一端超时并重发最后的FIN）。
+* 当TCP的一端发起主动关闭，在发出最后一个ACK包后，即第三次挥手完成后发送了第四次挥手的ACK包前就进入了`TIME_WAIT`状态；
+* 必须在此状态上停留两倍的MSL时间，这样可以让TCP再次发送最后的ACK以防这个ACK丢失（另一端超时并重发最后的FIN）。
 
 TTL与MSL是有关系的但不是简单的相等的关系，MSL要大于等于TTL。
 

@@ -1,8 +1,8 @@
 # 三次握手、四次挥手
----
+
 ## TCP连接正常建立和关闭对应的状态：
 
-![](/assets/TCP中Socket正常连接和断开连接状态变迁.png)
+![](../../../.gitbook/assets/tcp-zhong-socket-zheng-chang-lian-jie-he-duan-kai-lian-jie-zhuang-tai-bian-qian.png)
 
 TCP中的11种状态已经在**TCP连接的正常建立会断开中体现了10种状态**（**还有一种CLOSING状态在同时关闭时出现**）。
 

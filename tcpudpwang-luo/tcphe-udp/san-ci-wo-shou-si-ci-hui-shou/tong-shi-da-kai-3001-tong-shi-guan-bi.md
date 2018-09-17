@@ -1,8 +1,10 @@
 # 同时打开、同时关闭
----
-### 同时打开
-![](/assets/同时打开.png)
 
-### 同时关闭
-![](/assets/同时关闭.png)
+## 同时打开
+
+![](../../../.gitbook/assets/tong-shi-da-kai.png)
+
+## 同时关闭
+
+![](../../../.gitbook/assets/tong-shi-guan-bi.png)
 
